@@ -14,7 +14,7 @@ const syncUser = inngest.createFunction(
     const user = {
       clerkId: id,
       name: `${first_name || ""} ${last_name || ""}`,
-      email: email_addresses,
+      email: email_addresses[0]?.email_address,
       profileImage: image_url,
     };
 
@@ -27,7 +27,7 @@ const deleteUserFromDB = inngest.createFunction(
   { event: "clerk/user.deleted" },
   async ({ event }) => {
     const { id } = event.data;
-    await User.findOne({ clerkId: id });
+    await User.deleteOne({ clerkId: id });
   }
 );
 
