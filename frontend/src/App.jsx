@@ -5,6 +5,7 @@ import {
   SignedOut,
   SignInButton,
   SignOutButton,
+  UserButton,
 } from "@clerk/clerk-react";
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
           <button>Logout</button>
         </SignOutButton>
       </SignedIn>
+
+      <UserButton />
     </>
   );
 }
