@@ -1,5 +1,6 @@
 import { Inngest } from "inngest";
 import User from "../models/User.js";
+import { deleteStreamUser, upsertStreamUser } from "./stream.js";
 
 // Create a client to send and receive events
 export const inngest = new Inngest({ id: "Leetcode-dummy" });
@@ -19,6 +20,12 @@ const syncUser = inngest.createFunction(
     };
 
     await User.create(user);
+
+    await upsertStreamUser({
+      id: user.clerkId.toString(),
+      name: user.name,
+      image: user.profileImage,
+    });
   }
 );
 
@@ -28,6 +35,8 @@ const deleteUserFromDB = inngest.createFunction(
   async ({ event }) => {
     const { id } = event.data;
     await User.deleteOne({ clerkId: id });
+
+    await deleteStreamUser(id.toString());
   }
 );
 
