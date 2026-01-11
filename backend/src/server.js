@@ -28,7 +28,7 @@ app.use("/api/inngest", serve({ client: inngest, functions }));
 //   });
 // });
 
-if (ENV.NODE_ENV === "production") {
+if (ENV.NODE_ENV) {
   app.use(express.static(path.join(__dirname, "../frontend", "dist")));
 
   app.get("/{*any}", (req, res) => {
