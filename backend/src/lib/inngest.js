@@ -26,6 +26,8 @@ const syncUser = inngest.createFunction(
       name: user.name,
       image: user.profileImage,
     });
+
+    //  TODO => Implementation of sending email to the user as he sign up
   }
 );
 
