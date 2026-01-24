@@ -1,31 +1,28 @@
-import { useState } from "react";
-import "./App.css";
 import {
   SignedIn,
   SignedOut,
   SignInButton,
   SignOutButton,
   UserButton,
+  useUser,
 } from "@clerk/clerk-react";
+import { Toaster } from "react-hot-toast";
+import { Navigate, Route, Routes } from "react-router";
+import HomePage from "./pages/HomePage.jsx";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const { SignedIn } = useUser();
 
   return (
     <>
-      <SignedOut>
-        <SignInButton mode="modal">
-          <button>Login</button>
-        </SignInButton>
-      </SignedOut>
-
-      <SignedIn>
-        <SignOutButton mode="modal">
-          <button>Logout</button>
-        </SignOutButton>
-      </SignedIn>
-
-      <UserButton />
+      <Toaster />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/problems"
+          element={SignedIn ? <ProblemsPage /> : <Navigate to={"/"} />}
+        />
+      </Routes>
     </>
   );
 }
