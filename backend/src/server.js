@@ -9,6 +9,7 @@ import { connectDB } from "./lib/db.js";
 import { protectRoute } from "./middleware/protectRoute.js";
 // import path from "path";
 import chatRoutes from "./routes/chatRoutes.js";
+import sessionRoutes from "./routes/sessionRoutes.js";
 
 dotenv.config();
 
@@ -33,6 +34,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/chat", chatRoutes);
+app.use("/api/sessions", sessionRoutes);
 
 //  Here protectRoute is an array, so express implicity flatten the array and call all inside function w.r.t order
 app.get("/video-calls", protectRoute, (req, res) => {
