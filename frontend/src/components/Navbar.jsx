@@ -7,7 +7,7 @@ function Navbar() {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="sticky top-0 backdrop-blur-md z-50 ">
+    <nav className="sticky top-0 backdrop-blur-md z-50  bg-gradient-to-r from-purple-900/20 via-black/50 to-cyan-900/20">
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* LOGO */}

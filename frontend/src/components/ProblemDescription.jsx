@@ -10,7 +10,7 @@ const ProblemDescription = ({
   return (
     <div className="h-full overflow-y-auto bg-base-200">
       {/* HEADER SECTION */}
-      <div className="p-6 bg-base-100 border-b border-base-300">
+      <div className="p-6 bg-gradient-to-r from-purple-900/20 via-black/50 to-cyan-900/20 border border- rounded-2xl  border-b border-base-300">
         <div className="flex items-start justify-between mb-3">
           <h1 className="text-3xl font-bold text-base-content">
             {problem.title}
@@ -39,7 +39,7 @@ const ProblemDescription = ({
         </div>
       </div>
 
-      <div className="p-6 space-y-6">
+      <div className="p-6 space-y-6  bg-gradient-to-r from-purple-900/20 via-black/50 to-cyan-900/20">
         {/* PROBLEM DESC */}
         <div className="bg-base-100 rounded-xl shadow-sm p-5 border border-base-300">
           <h2 className="text-xl font-bold text-base-content">Description</h2>
