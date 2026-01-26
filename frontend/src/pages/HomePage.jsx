@@ -193,7 +193,7 @@ const HomePage = () => {
             <div className="relative overflow-hidden bg-linear-to-r from-purple-900/30 via-black/50 to-cyan-900/30 border border-white/10 rounded-2xl p-8 md:p-12 lg:p-16">
               {/* Background Pattern */}
               <div className="absolute inset-0 opacity-5">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.1)_1px,transparent_0)] bg-[length:40px_40px]"></div>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.1)_1px,transparent_0)] bg-size-[40px_40px]"></div>
               </div>
 
               {/* Glow Effects */}
