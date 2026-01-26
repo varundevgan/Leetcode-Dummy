@@ -10,6 +10,8 @@ import { Toaster } from "react-hot-toast";
 import { Navigate, Route, Routes } from "react-router";
 import HomePage from "./pages/HomePage.jsx";
 import DashboardPage from "./pages/DashboardPage.jsx";
+import { ProblemPage } from "./pages/ProblemPage.jsx";
+import { Problems } from "./pages/Problems.jsx";
 
 function App() {
   const { isSignedIn, isLoaded } = useUser();
@@ -27,11 +29,15 @@ function App() {
         />
         <Route
           path="/dashboard"
-          element={!isSignedIn ? <DashboardPage /> : <Navigate to={"/"} />}
+          element={isSignedIn ? <DashboardPage /> : <Navigate to={"/"} />}
         />
         <Route
           path="/problems"
-          element={isSignedIn ? <ProblemsPage /> : <Navigate to={"/"} />}
+          element={isSignedIn ? <Problems /> : <Navigate to={"/"} />}
+        />
+        <Route
+          path="/problem/:id"
+          element={isSignedIn ? <ProblemPage /> : <Navigate to={"/"} />}
         />
       </Routes>
     </>
