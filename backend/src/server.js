@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/api/chat", chatRoutes);
+app.use("/api/chat", chatRoutes);
 app.use("/api/sessions", sessionRoutes);
 
 //  Here protectRoute is an array, so express implicity flatten the array and call all inside function w.r.t order

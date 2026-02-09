@@ -3,7 +3,7 @@ import { chatClient } from "../lib/stream.js";
 export async function getStreamToken(req, res) {
   try {
     const token = chatClient.createToken(req.user.clerkId);
-
+    console.log("req", req.user);
     res.status(200).json({
       token,
       userID: req.user.clerkId,

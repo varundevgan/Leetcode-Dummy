@@ -15,8 +15,8 @@ const CodeEditor = ({
       <div className="flex items-center justify-between px-4 py-3 bg-base-100 border-t border-base-300">
         <div className="flex items-center gap-3">
           <img
-            src={LANGUAGE_CONFIG[language].icon}
-            alt={LANGUAGE_CONFIG[language].name}
+            src={LANGUAGE_CONFIG[language]?.icon}
+            alt={LANGUAGE_CONFIG[language]?.name}
             className="size-6"
           />
           <select
@@ -54,7 +54,7 @@ const CodeEditor = ({
       <div className="flex-1">
         <Editor
           height={"100%"}
-          language={LANGUAGE_CONFIG[language].monacoLang}
+          language={LANGUAGE_CONFIG[language]?.monacoLang}
           value={code}
           onChange={onCodeChange}
           theme="vs-dark"
