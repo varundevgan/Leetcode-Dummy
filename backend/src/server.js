@@ -28,7 +28,7 @@ app.use(clerkMiddleware()); // this will add auth object to the req i.e req.auth
 // <----------------------------------Middleware ends---------------------------------->
 
 app.get("/", (req, res) => {
-  res.status(400).json({
+  res.status(200).json({
     message: "Hello from server",
   });
 });
