@@ -22,7 +22,7 @@ app.use(
     credentials: true,
   })
 );
-app.use("/api/inngest", serve({ client: inngest, functions }));
+app.use("/inngest", serve({ client: inngest, functions }));
 app.use(clerkMiddleware()); // this will add auth object to the req i.e req.auth
 
 // <----------------------------------Middleware ends---------------------------------->
@@ -33,8 +33,8 @@ app.get("/", (req, res) => {
   });
 });
 
-app.use("/api/chat", chatRoutes);
-app.use("/api/sessions", sessionRoutes);
+app.use("/chat", chatRoutes);
+app.use("/sessions", sessionRoutes);
 
 //  Here protectRoute is an array, so express implicity flatten the array and call all inside function w.r.t order
 app.get("/video-calls", protectRoute, (req, res) => {
