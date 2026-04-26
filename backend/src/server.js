@@ -15,6 +15,9 @@ dotenv.config();
 
 const app = express();
 
+console.log("Steam api: ",process.env.STREAM_API_KEY);
+console.log("Steam api: ", process.env.STREAM_API_SECRET);
+
 app.use(express.json());
 app.use(
   cors({
